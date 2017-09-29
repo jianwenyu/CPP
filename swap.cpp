@@ -2,6 +2,12 @@
 
 using namespace std;
 
+#define swap(a,b){\
+    a = a^b;    \
+    b = b^a;    \
+    a = a^b;    \
+}
+
 int main(int argc,char **argv){
     int a = 1;
     int b = 2;
@@ -9,10 +15,8 @@ int main(int argc,char **argv){
     printf("b is %d\n",b);
     
     //swapping code occur
-    int temp;
-    temp = a;
-    a = b;
-    b = temp;
+    swap(a,b);
+    
     printf("After the swap:\n");
     printf("a is %d\n",a);
     printf("b is %d\n",b);
