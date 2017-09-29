@@ -10,7 +10,7 @@ using namespace std;
 
 int main(int argc,char **argv){
     int a = 1;
-    int b = 2;
+    int b = 4;
     printf("Before the swap:\n");
     printf("a is %d\n",a);
     printf("b is %d\n",b);
