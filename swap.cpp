@@ -9,7 +9,11 @@ int main(int argc,char **argv){
     printf("b is %d\n",b);
     
     //swapping code occur
-    
+    int temp;
+    temp = a;
+    a = b;
+    b = temp;
+    printf("After the swap:\n");
     printf("a is %d\n",a);
     printf("b is %d\n",b);
     
