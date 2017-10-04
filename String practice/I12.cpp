@@ -13,6 +13,8 @@ bool check_permu(string a,string b){
 
 int main(int argc, char **argv){
     
-    
+    int a =2;
+    a = a<<3;
+    cout<<a<<endl;
     return 0;
 }
