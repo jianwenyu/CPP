@@ -6,7 +6,6 @@ using namespace std;
 
 bool binSearch(int min,int max,int a[],int x){
    int mid = (max+min)/2;
- 
    if(min<=max){
         if(x>a[mid]){
             return binSearch(mid+1,max,a,x);
