@@ -14,6 +14,7 @@ protected:
 public:
     car(){};
     car(string _brand,string _model,int _price,string _drive):brand(_brand),model(_model),price(_price),drive(_drive){}
+    car(car & c);
     void setBrand(string _brand);
     void setModel(string _model);
     void setPrice(int _price);
@@ -23,6 +24,7 @@ public:
     int getPrice();
     string getDrive();
     void getInfo(); 
+    
 };
 
     void car::setBrand(string _brand){brand = _brand;}
@@ -36,6 +38,14 @@ public:
     void car::getInfo(){
     cout<<"The car is "<<brand<<", model "<<model<<", Price "<<price<<", "<<drive<<endl;
     } 
+    car::car (car & c){
+        
+            brand = c.brand;
+            model = c.model;
+            price = c.price;
+            drive = c.drive;
+    }
+    
     
 class Subaru:public car{
 public:
@@ -43,11 +53,8 @@ public:
     
 };
 
-Subaru::Subaru(string _model,int _price,string _drive){
-    brand="Subaru";
-    model=_model;
-    price=_price;
-    drive=_drive;
+Subaru::Subaru(string _model,int _price,string _drive):car("Subaru",_model,_price,_drive){
+
     }
 
 int main(int argc,char **argv){
@@ -59,6 +66,8 @@ int main(int argc,char **argv){
     bmw.setPrice(40000);
     bmw.setDrive("All Wheel Drive");
     bmw.getInfo();
+    car bmw2=bmw;
+    bmw2.getInfo();
     return 0;
 }
 
