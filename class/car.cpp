@@ -24,6 +24,7 @@ public:
     int getPrice();
     string getDrive();
     void getInfo(); 
+    car & operator = (car & c);
     
 };
 
@@ -46,6 +47,16 @@ public:
             drive = c.drive;
     }
     
+    car & car::operator = (car & c){
+        if(this!=&c){
+            brand = c.brand;
+            model = c.model;
+            price = c.price;
+            drive = c.drive;
+        }
+        return *this;
+    }
+    
     
 class Subaru:public car{
 public:
@@ -66,7 +77,8 @@ int main(int argc,char **argv){
     bmw.setPrice(40000);
     bmw.setDrive("All Wheel Drive");
     bmw.getInfo();
-    car bmw2=bmw;
+    car bmw2;
+    bmw2=ccbd;
     bmw2.getInfo();
     return 0;
 }
