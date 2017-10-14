@@ -13,8 +13,11 @@ protected:
     
 public:
     car(){};
-    car(string _brand,string _model,int _price,string _drive):brand(_brand),model(_model),price(_price),drive(_drive){}
+    car(string _brand,string _model,int _price,string _drive):brand(_brand),model(_model),price(_price),drive(_drive){
+    cout<<"car constructor."<<endl;}
     car(car & c);
+    ~car(){
+    cout<<"car destructor"<<endl;}
     void setBrand(string _brand);
     void setModel(string _model);
     void setPrice(int _price);
@@ -25,6 +28,7 @@ public:
     string getDrive();
     void getInfo(); 
     car & operator = (car & c);
+    
     
 };
 
@@ -56,22 +60,43 @@ public:
         }
         return *this;
     }
+
     
     
 class Subaru:public car{
 public:
     Subaru(string _model,int _price,string _drive);
+    ~Subaru();
+    void getInfo(); 
     
 };
 
-Subaru::Subaru(string _model,int _price,string _drive):car("Subaru",_model,_price,_drive){
-
+    Subaru::Subaru(string _model,int _price,string _drive):car("Subaru","2017-"+_model,_price,_drive){
+        cout<<"Subaru constructor."<<endl;
+        }
+    Subaru::~Subaru(){
+        cout<<"Subaru destructor."<<endl;
     }
+    void Subaru::getInfo(){cout<<"Inside subaru"<<endl;}
+
+class XV:public Subaru{
+public:
+    XV():Subaru("XV",0,"All wheel drive"){
+    cout<<"XV constructor."<<endl;};
+    XV(int _price):Subaru("XV",_price,"All wheel drive"){
+    cout<<"XV constructor."<<endl;};
+    ~XV(){};
+};
+
 
 int main(int argc,char **argv){
     Subaru ccbd("forester",40000,"ALl Wheel Drive");
     car bmw("BMW","X6",60000,"Front Wheel Drive");
-    ccbd.getInfo();
+    XV xv1(36000);
+    xv1.Subaru::car::getInfo();
+    ccbd.getInfo();    
+    ccbd.car::getInfo();//recall the function from base class, use the base class name
+    
     bmw.getInfo();
     bmw.setModel("X5");
     bmw.setPrice(40000);
@@ -80,6 +105,7 @@ int main(int argc,char **argv){
     car bmw2;
     bmw2=ccbd;
     bmw2.getInfo();
+
     return 0;
 }
 
