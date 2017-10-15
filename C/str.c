@@ -27,7 +27,7 @@ int str(char *str1,char *str2){
     return 0;
 }
 
-int main(void){
+int main(void){ 
     char a[]="abcdefghi";
     char b[] = "bcd";
     

@@ -21,8 +21,8 @@ int main(int argc, char** argv){
     }
     */
     
-    while (!feof(fp)){
-        fgets(buff,50,(FILE*)fp);
+    while(!feof(fp)){
+        fgets(buff,50,fp);
         printf("%s",buff);
     }
     fclose(fp);
