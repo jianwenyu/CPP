@@ -1,11 +1,15 @@
 #include <stdio.h>
+#include<stdlib.h>
+
+void fun(int *pp){
+    pp = (int*)malloc(sizeof(int));
+    *pp=12;
+}
 
 int main() {
-   FILE *fp;
-
-   fp = fopen("test.txt", "w+");
-   fprintf(fp, "This is testing for fprintf...\n");
-   fputs("This is testing for fputs...\n", fp);
-   fclose(fp);
-   return 0;
+    int x =10;
+    int *p = &x;
+    fun(p);
+    printf("%d\n",x);
+    return 0;
 }

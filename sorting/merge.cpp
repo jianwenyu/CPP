@@ -33,8 +33,8 @@ void mergeSort(int arr[],int len){
         mergeSort(R,len-mid);
         merge(arr,L,mid,R,len-mid);
         
-        delete L;
-        delete R;
+        delete[] L;
+        delete[] R;
         
 
     }
