@@ -1,0 +1,12 @@
+Before the swap:
+a is 1
+b is 8
+After the swap:
+a is 8
+b is 1
+Before the swap:
+a is 1
+b is 8
+After the swap:
+a is 8
+b is 1
