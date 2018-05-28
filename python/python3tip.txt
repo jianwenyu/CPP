@@ -1,0 +1,5 @@
+1. place holder is "{}".format(variable)
+2. convert number to string is str(n), or string to number int(str)
+3. loop need tp add semicolum, like  while:  
+4. range(5) is 0 ~ 4, 5 times
+
