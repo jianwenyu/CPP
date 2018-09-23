@@ -2,4 +2,6 @@
 2. convert number to string is str(n), or string to number int(str)
 3. loop need tp add semicolum, like  while:  
 4. range(5) is 0 ~ 4, 5 times
-
+5. import module (need to use prefix when using function), e.g random.randint
+6. from module import * , using function without prefix	randint
+7. exit the program: sys.exit()
