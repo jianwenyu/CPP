@@ -2,12 +2,12 @@
 cc=gcc
 DEBUG_DIR=./debug
 RELEASE_DIR=./release
-FLAG=-g
+FLAG=
 
 all: bsttree
 
 bsttree: main.o tree.o
-	$(cc) -o $(DEBUG_DIR)/bsttree main.o tree.o $(FLAG)
+	$(cc) -o $(DEBUG_DIR)/bsttree main.o tree.o $(FLAG) -g
 
 tree: tree.c
 	$(cc) -c tree.c $(FLAG)
@@ -18,7 +18,7 @@ main: main.c
 .PHONY: clean release
 
 clean:
-	rm *.o $(DEBUG_DI)/bsttree
+	rm *.o $(DEBUG_DIR)/bsttree
 	
 release:
-	cp -f $(DEBUG_DI)/bsttree $(RELEASE_DIR)/bsttree
+	cp -f $(DEBUG_DIR)/bsttree $(RELEASE_DIR)/bsttree
